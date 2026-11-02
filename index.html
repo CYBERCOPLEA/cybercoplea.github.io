@@ -777,16 +777,16 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
 .pf-stage{position:absolute;bottom:0;right:max(0px,calc(50% - 660px));height:100%;aspect-ratio:1/1;z-index:1;pointer-events:none}
 .pf-rings{position:absolute;left:50%;top:46%;width:88%;aspect-ratio:1/1;transform:translate(-50%,-50%)}
 .pr{position:absolute;border-radius:50%;display:block}
-.pr-glow{inset:12%;background:radial-gradient(circle,rgba(61,214,245,.38) 0%,rgba(30,136,229,.18) 40%,transparent 70%);filter:blur(6px);animation:prBreathe 4s ease-in-out infinite}
-.pr-ticks{inset:0;width:100%;height:100%;animation:rot 60s linear infinite}
-.pr-arc1{inset:4%;background:conic-gradient(from 0deg,transparent 0 55%,rgba(61,214,245,.15) 62%,#3dd6f5 82%,#ffffff 84%,transparent 85%);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));animation:rot 5s linear infinite;filter:drop-shadow(0 0 6px #3dd6f5)}
-.pr-dash{inset:11%;border:1.5px dashed rgba(61,214,245,.45);animation:rot 40s linear infinite reverse}
-.pr-arc2{inset:17%;background:conic-gradient(from 180deg,transparent 0 65%,rgba(79,140,255,.2) 70%,#4f8cff 90%,#b8d4ff 91%,transparent 92%);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));animation:rot 8s linear infinite reverse;filter:drop-shadow(0 0 5px #4f8cff)}
-.pr-dots{inset:4%;animation:rot 14s linear infinite}
+.pr-glow{inset:12%;background:radial-gradient(circle,rgba(61,214,245,.38) 0%,rgba(30,136,229,.18) 40%,transparent 70%);filter:blur(6px)}
+.pr-ticks{inset:0;width:100%;height:100%}
+.pr-arc1{inset:4%;background:conic-gradient(from 0deg,transparent 0 55%,rgba(61,214,245,.15) 62%,#3dd6f5 82%,#ffffff 84%,transparent 85%);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));mask:radial-gradient(farthest-side,transparent calc(100% - 4px),#000 calc(100% - 3px));filter:drop-shadow(0 0 6px #3dd6f5)}
+.pr-dash{inset:11%;border:1.5px dashed rgba(61,214,245,.45)}
+.pr-arc2{inset:17%;background:conic-gradient(from 180deg,transparent 0 65%,rgba(79,140,255,.2) 70%,#4f8cff 90%,#b8d4ff 91%,transparent 92%);-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));mask:radial-gradient(farthest-side,transparent calc(100% - 3px),#000 calc(100% - 2px));filter:drop-shadow(0 0 5px #4f8cff)}
+.pr-dots{inset:4%}
 .pr-dots i{position:absolute;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;background:#fff;box-shadow:0 0 10px 3px #3dd6f5,0 0 22px 6px rgba(61,214,245,.5)}
 .pr-dots i:nth-child(1){left:50%;top:0}.pr-dots i:nth-child(2){left:93.3%;top:75%}.pr-dots i:nth-child(3){left:6.7%;top:75%;width:7px;height:7px;margin:-3.5px 0 0 -3.5px}
-.pr-pulse{inset:22%;border:2px solid rgba(61,214,245,.6);animation:prPulse 3.2s ease-out infinite}
-.pr-pulse.p2{animation-delay:1.6s}
+.pr-pulse{inset:22%;border:2px solid rgba(61,214,245,.6)}
+
 @keyframes prPulse{from{transform:scale(.75);opacity:.8}to{transform:scale(1.35);opacity:0}}
 @keyframes prBreathe{50%{transform:scale(1.08);opacity:.75}}
 .pf-photo{position:absolute;bottom:0;left:50%;height:93%;width:auto;transform:translateX(-50%);z-index:2;filter:drop-shadow(0 0 24px rgba(61,214,245,.35)) drop-shadow(0 18px 28px rgba(0,0,0,.55));-webkit-mask-image:linear-gradient(0deg,transparent 0%,#000 16%);mask-image:linear-gradient(0deg,transparent 0%,#000 16%);animation:pfIn 1.1s cubic-bezier(.2,.8,.2,1) both}
@@ -794,6 +794,19 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
 @media(max-width:760px){.pf-head{min-height:500px;align-items:flex-end}
  .pf-stage{right:auto;left:50%;transform:translateX(-50%);height:76%;top:8px;bottom:auto}
  .pf-shade{background:linear-gradient(0deg,rgba(10,22,40,.98) 16%,rgba(10,22,40,.65) 40%,rgba(10,22,40,0) 62%)}}
+
+.pr{will-change:transform,opacity}
+/* ===== ID FLIP CARD TEXT — white & bold, centred with the photo ===== */
+.idf-top{display:flex;flex-direction:column;align-items:center;justify-content:flex-start;padding-top:16px}
+.idf-top span,.idf-top small{position:relative!important;left:auto!important;top:auto!important;text-align:center;color:#fff!important;text-shadow:0 1px 0 rgba(0,0,0,.35),0 2px 8px rgba(0,0,0,.45)}
+.idf-top span{font:800 13px Sora,Inter,sans-serif!important;letter-spacing:3px}
+.idf-top small{font:700 11px Inter,sans-serif!important;letter-spacing:2px;margin-top:4px}
+.idf h3{color:#fff;font-weight:800}
+.idf .r{font-weight:800}
+.idf-rows div{color:#fff}
+.idf-rows b{color:#fff!important;font-weight:700!important}
+.idf-rows span{color:#fff;font-weight:700}
+.idf-strip span{color:#fff;font-weight:700}
 </style>
 </head>
 <body>
@@ -1862,6 +1875,16 @@ renderTk();renderEv();
 $('#pfPrint').onclick=()=>{go('profile');if(inFrame){toast(lang==='hi'?'PDF के लिए पेज को नए टैब में खोलें (Ctrl+P)':'Open the page in its own tab and press Ctrl+P to save as PDF');}setTimeout(()=>{try{window.print()}catch(_){}},300)};
 
 try{if(localStorage.getItem('vt-lang')==='hi')setLang('hi')}catch(_){}
+
+/* ===== PROFILE RINGS — JS-driven so they move on every device ===== */
+(function(){const q=s=>document.querySelector('.pf-rings '+s);const P={ticks:q('.pr-ticks'),a1:q('.pr-arc1'),dash:q('.pr-dash'),a2:q('.pr-arc2'),dots:q('.pr-dots'),glow:q('.pr-glow'),p1:q('.pr-pulse'),p2:q('.pr-pulse.p2')};
+  if(!P.a1)return;const t0=performance.now();
+  (function f(now){const t=(now-t0)/1000;
+    P.ticks.style.transform=`rotate(${t*6}deg)`;P.a1.style.transform=`rotate(${t*72}deg)`;P.dash.style.transform=`rotate(${-t*9}deg)`;
+    P.a2.style.transform=`rotate(${-t*45}deg)`;P.dots.style.transform=`rotate(${t*26}deg)`;
+    const b=(Math.sin(t*1.6)+1)/2;P.glow.style.transform=`scale(${1+b*.08})`;P.glow.style.opacity=1-b*.25;
+    [[P.p1,0],[P.p2,1.6]].forEach(([e,d])=>{const k=((t+d)%3.2)/3.2;e.style.transform=`scale(${.75+.6*k})`;e.style.opacity=(.8*(1-k)).toFixed(3)});
+    requestAnimationFrame(f)})(t0)})();
 
 go(location.hash.slice(1)||'home',false);
 document.fonts&&document.fonts.ready.then(moveInk);
