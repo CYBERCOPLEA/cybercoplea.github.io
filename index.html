@@ -812,6 +812,18 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
 .mq-label{font:800 15.95px Inter,sans-serif!important;color:#ffd400!important;letter-spacing:3.5px;text-shadow:0 0 12px rgba(255,212,0,.35)}
 .mq-item{border:1.5px solid var(--mc)!important;color:#fff!important;background:linear-gradient(150deg,color-mix(in srgb,var(--mc) 30%,#0f1f38),color-mix(in srgb,var(--mc) 8%,#0f1f38))!important;box-shadow:0 4px 0 rgba(0,0,0,.35),0 8px 18px color-mix(in srgb,var(--mc) 18%,transparent);font-weight:700}
 .mq-item:hover{color:var(--mc)!important;background:linear-gradient(150deg,color-mix(in srgb,var(--mc) 45%,#0f1f38),color-mix(in srgb,var(--mc) 15%,#0f1f38))!important;transform:translateY(-3px)}
+
+/* ===== MIND-MAP — each node its own colour ===== */
+.mm-node rect{fill:color-mix(in srgb,var(--nc) 22%,#0f1f38)!important;stroke:var(--nc)!important;stroke-width:2!important;filter:drop-shadow(0 6px 0 rgba(0,0,0,.35)) drop-shadow(0 0 10px color-mix(in srgb,var(--nc) 30%,transparent))!important}
+.mm-node text{fill:#fff!important;font-weight:700!important}
+.mm-node.hot rect{fill:color-mix(in srgb,var(--nc) 45%,#0f1f38)!important;stroke:#fff!important;filter:drop-shadow(0 6px 0 rgba(0,0,0,.35)) drop-shadow(0 0 18px var(--nc))!important}
+.mm-node .go{fill:var(--nc)!important}
+.branch .mm-line{stroke:color-mix(in srgb,var(--nc) 55%,#2a4a73)}
+.branch.hot .mm-line{stroke:var(--nc)!important;filter:drop-shadow(0 0 6px var(--nc))!important}
+.branch .mm-leaf rect{stroke:var(--nc)!important}
+.branch .mm-leaf text{fill:#fff!important}
+.branch .mm-leafline{stroke:var(--nc)!important}
+.mm-list button{border-color:var(--nc,#1f3a5f)!important}
 </style>
 </head>
 <body>
@@ -1553,7 +1565,8 @@ nodes.forEach((n,i)=>{
     el('rect',{x:lx-w/2,y:ly-13,width:w,height:26,rx:13},lg);
     const tx=el('text',{x:lx,y:ly+4,'text-anchor':'middle'},lg);tx.textContent=lf;
   });
-  const ng=el('g',{class:'mm-node',tabindex:0,role:'link'},layerN);g._n=ng;
+  const NC={profile:'#a77bff',certificates:'#3dd6f5',workshops:'#2ecc71',award:'#e8b04b',press:'#ff7a45',contact:'#ff5a7a',report:'#ff3b45'};
+  const ng=el('g',{class:'mm-node',tabindex:0,role:'link',style:'--nc:'+NC[n.id]},layerN);g._n=ng;g.style.setProperty('--nc',NC[n.id]);
   const w=n.t.length*8.4+66;
   el('rect',{x:n.x-w/2,y:n.y-24,width:w,height:48,rx:24},ng);
   const t1=el('text',{x:n.x-w/2+20,y:n.y+6,class:'ic'},ng);t1.textContent=n.ic;
@@ -1563,7 +1576,7 @@ nodes.forEach((n,i)=>{
   const on=()=>{$$('#mindmap .hot').forEach(x=>x.classList.remove('hot'));g.classList.add('hot');ng.classList.add('hot');layerL.appendChild(g)},off=()=>{g.classList.remove('hot');ng.classList.remove('hot')};
   ng.addEventListener('mouseenter',on);ng.addEventListener('mouseleave',off);ng.addEventListener('focus',on);ng.addEventListener('blur',off);
   ng.addEventListener('click',open);ng.addEventListener('keydown',e=>{if(e.key==='Enter')open()});
-  const b=document.createElement('button');b.innerHTML=`<span>${n.ic} ${n.t}</span><span>→</span>`;b.onclick=open;$('#mmList').appendChild(b);
+  const b=document.createElement('button');b.style.setProperty('--nc',NC[n.id]);b.innerHTML=`<span>${n.ic} ${n.t}</span><span>→</span>`;b.onclick=open;$('#mmList').appendChild(b);
 });
 el('circle',{class:'mm-pulse',cx:C.x,cy:C.y,r:80},cg);
 el('circle',{cx:C.x,cy:C.y,r:80,fill:'#0f1f38'},cg);
