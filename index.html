@@ -835,6 +835,7 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
 .ag{border:1.5px solid var(--ac)!important;background:linear-gradient(150deg,color-mix(in srgb,var(--ac) 32%,#0f1f38),color-mix(in srgb,var(--ac) 10%,#0a1628))!important;box-shadow:0 12px 24px rgba(0,0,0,.4),0 0 16px color-mix(in srgb,var(--ac) 30%,transparent)!important}
 .ag b{color:#fff!important;font-weight:800}
 .ag span{color:color-mix(in srgb,var(--ac) 35%,#fff)!important;font-weight:600}
+.radar .poly{transition:fill .35s,stroke .35s,filter .35s}.radar .dotp{transition:stroke .25s}.radar text{transition:fill .25s}
 </style>
 </head>
 <body>
@@ -1882,18 +1883,19 @@ renderTk();renderEv();
   ax.forEach((a,i)=>{const[x,y]=pt(i,R),[tx,ty]=pt(i,R+28);h+=`<line class="ax-l" id="ax${i}" x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#1f3a5f"/><text id="axt${i}" x="${tx}" y="${ty+4}" text-anchor="${Math.abs(tx-cx)<10?'middle':tx>cx?'start':'end'}">${a[0]}</text>`});
   h+=`<polygon class="poly" id="rpoly" points="${ax.map((_,i)=>pt(i,0).join(',')).join(' ')}"/>`;ax.forEach((a,i)=>{h+=`<circle class="dotp" r="6" cx="${cx}" cy="${cy}" id="rd${i}"/>`});svg.innerHTML=h;
   const box=svg.parentElement,tip=document.createElement('div');tip.className='rtip';box.appendChild(tip);
-  const poly=$('#rpoly'),dots=ax.map((_,i)=>$('#rd'+i));
+  const poly=$('#rpoly'),dots=ax.map((_,i)=>$('#rd'+i));const RC=['#3dd6f5','#2ecc71','#a77bff','#ff9933','#ff5a7a','#ffd400'];dots.forEach((d,i)=>{d.style.fill=RC[i]});
+  const paint=()=>{const c=hot>=0?RC[hot]:'#e8b04b';poly.style.stroke=c;poly.style.fill=hot>=0?`color-mix(in srgb,${c} 30%,transparent)`:'';poly.style.filter=`drop-shadow(0 0 12px ${c})`;ax.forEach((_,j)=>{$('#ax'+j).style.stroke=j===hot?RC[j]:'';$('#axt'+j).style.fill=j===hot?RC[j]:'';dots[j].style.stroke=j===hot?'#fff':''});tip.style.borderColor=c;const b=tip.querySelector('b');if(b)b.style.color=c};
   let shown=0,hover=false,t0=0,hot=-1;
   function draw(k,t){const v=ax.map((a,i)=>{let s=a[1]*k;if(hover)s*=1+.06*Math.sin(t/260+i*1.1);if(i===hot)s=Math.min(1.04,s*1.07);return s});
     poly.setAttribute('points',v.map((s,i)=>pt(i,R*s).join(',')).join(' '));v.forEach((s,i)=>{const[x,y]=pt(i,R*s);dots[i].setAttribute('cx',x);dots[i].setAttribute('cy',y);dots[i].setAttribute('r',i===hot?9:hover?6+1.5*Math.sin(t/200+i):6)})}
   function loop(t){if(!t0)t0=t;shown=Math.min(1,shown+.025);draw(1-Math.pow(1-shown,3),t);if(hover||shown<1)requestAnimationFrame(loop);else{t0=0;draw(1,0)}}
   new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){requestAnimationFrame(loop);o.disconnect()}}),{threshold:.3}).observe(svg);
   box.addEventListener('mouseenter',()=>{if(!hover){hover=true;requestAnimationFrame(loop)}});
-  box.addEventListener('mouseleave',()=>{hover=false;hot=-1;tip.style.opacity=0;ax.forEach((_,i)=>{$('#ax'+i).classList.remove('hot');$('#axt'+i).classList.remove('hot')})});
+  box.addEventListener('mouseleave',()=>{hover=false;hot=-1;tip.style.opacity=0;paint();ax.forEach((_,i)=>{$('#ax'+i).classList.remove('hot');$('#axt'+i).classList.remove('hot')})});
   box.addEventListener('mousemove',e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)/r.width*520-60,sy=(e.clientY-r.top)/r.height*470-30;
     let ang=Math.atan2(sx-cx,-(sy-cy));if(ang<0)ang+=2*Math.PI;const i=Math.round(ang/(2*Math.PI/n))%n,d=Math.hypot(sx-cx,sy-cy);
     hot=d<R+60?i:-1;ax.forEach((_,j)=>{$('#ax'+j).classList.toggle('hot',j===hot);$('#axt'+j).classList.toggle('hot',j===hot)});
-    if(hot>=0){const b=box.getBoundingClientRect(),dr=dots[hot].getBoundingClientRect();tip.innerHTML=`${ax[hot][0]}<b>${Math.round(ax[hot][1]*100)}%</b>`;tip.style.left=(dr.left-b.left+dr.width/2)+'px';tip.style.top=(dr.top-b.top)+'px';tip.style.opacity=1}else tip.style.opacity=0});
+    if(hot>=0){const b=box.getBoundingClientRect(),dr=dots[hot].getBoundingClientRect();tip.innerHTML=`${ax[hot][0]}<b>${Math.round(ax[hot][1]*100)}%</b>`;tip.style.left=(dr.left-b.left+dr.width/2)+'px';tip.style.top=(dr.top-b.top)+'px';tip.style.opacity=1}else tip.style.opacity=0;paint()});
 })();
 
 /* ===== PROFILE: agency orbit ===== */
