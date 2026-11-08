@@ -830,6 +830,11 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
 .cf .e{font-size:68px!important;margin-bottom:12px!important;line-height:1}
 .cf b{font-size:21px!important;line-height:1.2;color:#fff}
 .cf span{font-size:15.5px!important;line-height:1.35;margin-top:8px!important;color:#c9d6e8;max-width:92%}
+
+/* ===== AGENCY ORBIT — each box its own colour ===== */
+.ag{border:1.5px solid var(--ac)!important;background:linear-gradient(150deg,color-mix(in srgb,var(--ac) 32%,#0f1f38),color-mix(in srgb,var(--ac) 10%,#0a1628))!important;box-shadow:0 12px 24px rgba(0,0,0,.4),0 0 16px color-mix(in srgb,var(--ac) 30%,transparent)!important}
+.ag b{color:#fff!important;font-weight:800}
+.ag span{color:color-mix(in srgb,var(--ac) 35%,#fff)!important;font-weight:600}
 </style>
 </head>
 <body>
@@ -1893,7 +1898,7 @@ renderTk();renderEv();
 
 /* ===== PROFILE: agency orbit ===== */
 (function(){const w=$('#agw');if(!w)return;const A=[['I4C','Ministry of Home Affairs'],['CERT-In','National CERT'],['RBI','Banking regulator'],['Partner Banks','Hold & freeze'],['NCRP · 1930','Complaint portal'],['CCTNS · JMIS','Case records']];
-  const els=A.map(([b,s])=>{const d=document.createElement('div');d.className='ag';d.innerHTML=`<b>${b}</b><span>${s}</span>`;w.appendChild(d);return d});let t=0,hov=false;w.addEventListener('mouseenter',()=>hov=true);w.addEventListener('mouseleave',()=>hov=false);
+  const AGC=['#ff9933','#3dd6f5','#e8b04b','#2ecc71','#ff5a7a','#a77bff'];const els=A.map(([b,s],k)=>{const d=document.createElement('div');d.className='ag';d.style.setProperty('--ac',AGC[k]);d.innerHTML=`<b>${b}</b><span>${s}</span>`;w.appendChild(d);return d});let t=0,hov=false;w.addEventListener('mouseenter',()=>hov=true);w.addEventListener('mouseleave',()=>hov=false);
   (function f(){if(!hov)t+=.004;const rx=Math.min(310,w.clientWidth/2-80),ry=95;els.forEach((e,i)=>{const a=t+i*2*Math.PI/els.length,z=Math.sin(a);e.style.transform=`translate(${Math.cos(a)*rx}px,${z*ry}px) scale(${.7+.35*(z+1)/2})`;e.style.zIndex=z>0?10:1;e.style.opacity=.45+.55*(z+1)/2});requestAnimationFrame(f)})()})();
 
 /* ===== PROFILE: print ===== */
