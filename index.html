@@ -514,7 +514,7 @@ html.fs-1 body{font-size:14.5px}
 .fsz button+button{border-left:1px solid var(--line)}
 .fsz button:hover{color:var(--gold)}
 @media(max-width:560px){.fsz{display:none}}
-@media(max-width:1180px){
+@media(max-width:1300px){
   .burger{display:block}
   .tabs{position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--navy2);border-bottom:1px solid var(--line);padding:10px 16px;display:none;z-index:80}
   .tabs.open{display:flex}.tab .tip,.ink{display:none}.tab{padding:12px}
@@ -890,6 +890,17 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
 .mis-grid b{display:block;font-size:16px;color:#fff}
 .mis-grid span{font-size:13.5px;color:#c9d6e8}
 .mq-track{animation:none!important;will-change:transform}
+
+/* ===== NAV TABS — individual coloured pills ===== */
+.tab[data-go="home"]{--tc:#ff9933}.tab[data-go="profile"]{--tc:#a77bff}.tab[data-go="certificates"]{--tc:#3dd6f5}.tab[data-go="workshops"]{--tc:#2ecc71}.tab[data-go="award"]{--tc:#e8b04b}.tab[data-go="press"]{--tc:#ff7a45}.tab[data-go="tools"]{--tc:#4f8cff}.tab[data-go="contact"]{--tc:#ff5a7a}
+.tabs{gap:5px!important;align-items:center}
+.tab{padding:6px 10px!important;border-radius:999px!important;font-weight:700!important;font-size:13px!important;color:#fff!important;border:1.5px solid color-mix(in srgb,var(--tc) 70%,transparent);background:linear-gradient(150deg,color-mix(in srgb,var(--tc) 26%,#0f1f38),color-mix(in srgb,var(--tc) 8%,#0a1628));box-shadow:0 3px 0 rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08);transition:transform .2s,box-shadow .25s,background .25s}
+.tab:hover{transform:translateY(-2px);background:linear-gradient(150deg,color-mix(in srgb,var(--tc) 45%,#0f1f38),color-mix(in srgb,var(--tc) 15%,#0a1628));box-shadow:0 5px 0 rgba(0,0,0,.4),0 0 16px color-mix(in srgb,var(--tc) 45%,transparent)}
+.tab.active{color:#0a1628!important;background:var(--tc)!important;border-color:#fff;box-shadow:0 3px 0 rgba(0,0,0,.45),0 0 18px var(--tc)}
+.tab .tip b{color:var(--tc)!important}
+.tab .tip{border-color:var(--tc)!important}
+.ink{display:none!important}
+@media(max-width:1300px){.tabs{gap:8px!important}.tab{text-align:center}}
 </style>
 </head>
 <body>
