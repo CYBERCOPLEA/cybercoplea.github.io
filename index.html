@@ -889,6 +889,7 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
 .mis-grid i{font-style:normal;font-size:28px;display:block;margin-bottom:8px}
 .mis-grid b{display:block;font-size:16px;color:#fff}
 .mis-grid span{font-size:13.5px;color:#c9d6e8}
+.mq-track{animation:none!important;will-change:transform}
 </style>
 </head>
 <body>
@@ -1723,6 +1724,11 @@ card.addEventListener('mouseleave',()=>card.style.transform='');
 const ag=[['🛡️','EC-Council'],['🇮🇳','CERT-In'],['🏛️','I4C · MHA'],['🦅','U.S. DHS'],['🔐','ISEA · MeitY'],['🖥️','NIELIT'],['📘','NCERT'],['🎓','edX'],['💻','Computer Society of India'],['⚙️','Institution of Engineers'],['🏦','HDFC Bank'],['🚔','UP Police HQ'],['🧭','CRCIDF'],['📗','NIIT']];
 const MQC=['#ff9933','#3dd6f5','#2ecc71','#4f8cff','#e8b04b','#ff5a7a','#a77bff','#14d3b0','#ffcc33','#ff7a45','#5ad1ff','#7ed957','#ff6fd8','#ffd400'];
 $('#mq').innerHTML=[...ag,...ag].map(([i,t],k)=>`<span class="mq-item" style="--mc:${MQC[k%ag.length%MQC.length]}"><i>${i}</i>${t}</span>`).join('');
+/* JS-driven, left-to-right scroll so every name can be read; runs on every device */
+(function(){const t=$('#mq'),box=t.parentElement;t.style.animation='none';let x=null,last=performance.now(),paused=false;const speed=45;
+  box.addEventListener('mouseenter',()=>paused=true);box.addEventListener('mouseleave',()=>paused=false);
+  box.addEventListener('touchstart',()=>paused=true,{passive:true});box.addEventListener('touchend',()=>setTimeout(()=>paused=false,1500));
+  (function run(now){const dt=Math.min(now-last,100);last=now;const loop=t.scrollWidth/2;if(loop>0){if(x===null)x=-loop;if(!paused&&!document.hidden){x+=speed*dt/1000;if(x>=0)x-=loop}t.style.transform=`translate3d(${x}px,0,0)`}requestAnimationFrame(run)})(last)})();
 
 /* ---------- cyber network canvas ---------- */
 (function(){const c=$('#net');if(!c)return;const x=c.getContext('2d');let W,H,P=[];
