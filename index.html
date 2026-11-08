@@ -647,7 +647,7 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
 .cf:nth-child(4){transform:rotateY(-90deg) translateZ(130px)}.cf:nth-child(5){transform:rotateX(90deg) translateZ(130px)}.cf:nth-child(6){transform:rotateX(-90deg) translateZ(130px)}
 .cube-shadow{width:200px;height:26px;margin:-6px auto 0;border-radius:50%;background:radial-gradient(rgba(0,0,0,.55),transparent 70%)}
 .cube-hint{text-align:center;font-size:12.5px;color:var(--muted);margin-top:12px}
-.radar svg{width:100%;max-width:440px;display:block;margin:0 auto;overflow:visible}
+.radar svg{width:100%;max-width:510px;display:block;margin:0 auto;overflow:visible}
 .radar .poly{fill:rgba(232,176,75,.22);stroke:var(--gold);stroke-width:2.5;filter:drop-shadow(0 0 10px rgba(232,176,75,.4))}
 .radar text{fill:#c9d6e8;font:600 12.5px Inter}
 .radar .dotp{fill:var(--gold);stroke:#0a1628;stroke-width:2}
@@ -836,6 +836,10 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
 .ag b{color:#fff!important;font-weight:800}
 .ag span{color:color-mix(in srgb,var(--ac) 35%,#fff)!important;font-weight:600}
 .radar .poly{transition:fill .35s,stroke .35s,filter .35s}.radar .dotp{transition:stroke .25s}.radar text{transition:fill .25s}
+
+.wf-title{font:800 17.4px Inter,sans-serif!important;color:#ffd400!important;letter-spacing:4px;text-shadow:0 0 12px rgba(255,212,0,.35)}
+.radar text{font:800 18px Inter,sans-serif!important;fill:var(--lc,#c9d6e8)!important}
+.radar text.hot{font-size:19.5px!important;filter:drop-shadow(0 0 6px var(--lc))}
 </style>
 </head>
 <body>
@@ -1166,8 +1170,8 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
         <div class="cube-hint">✋ <span data-hi="खींचकर घुमाएँ · अपने आप घूमता है">Drag to rotate · auto-spins when idle</span></div>
       </div>
       <div class="radar reveal">
-        <div class="eyebrow" style="text-align:center" data-hi="कार्य फ़ोकस">Work focus</div><p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px" data-hi="चार्ट पर माउस ले जाएँ">Hover the chart to bring it to life</p>
-        <svg viewBox="-60 -30 520 470" id="radar"></svg>
+        <div class="eyebrow wf-title" style="text-align:center" data-hi="कार्य फ़ोकस">Work focus</div><p style="text-align:center;font-size:12.5px;color:var(--muted);margin-top:4px" data-hi="चार्ट पर माउस ले जाएँ">Hover the chart to bring it to life</p>
+        <svg viewBox="-100 -40 600 490" id="radar"></svg>
       </div>
     </div>
   </section>
@@ -1883,8 +1887,8 @@ renderTk();renderEv();
   ax.forEach((a,i)=>{const[x,y]=pt(i,R),[tx,ty]=pt(i,R+28);h+=`<line class="ax-l" id="ax${i}" x1="${cx}" y1="${cy}" x2="${x}" y2="${y}" stroke="#1f3a5f"/><text id="axt${i}" x="${tx}" y="${ty+4}" text-anchor="${Math.abs(tx-cx)<10?'middle':tx>cx?'start':'end'}">${a[0]}</text>`});
   h+=`<polygon class="poly" id="rpoly" points="${ax.map((_,i)=>pt(i,0).join(',')).join(' ')}"/>`;ax.forEach((a,i)=>{h+=`<circle class="dotp" r="6" cx="${cx}" cy="${cy}" id="rd${i}"/>`});svg.innerHTML=h;
   const box=svg.parentElement,tip=document.createElement('div');tip.className='rtip';box.appendChild(tip);
-  const poly=$('#rpoly'),dots=ax.map((_,i)=>$('#rd'+i));const RC=['#3dd6f5','#2ecc71','#a77bff','#ff9933','#ff5a7a','#ffd400'];dots.forEach((d,i)=>{d.style.fill=RC[i]});
-  const paint=()=>{const c=hot>=0?RC[hot]:'#e8b04b';poly.style.stroke=c;poly.style.fill=hot>=0?`color-mix(in srgb,${c} 30%,transparent)`:'';poly.style.filter=`drop-shadow(0 0 12px ${c})`;ax.forEach((_,j)=>{$('#ax'+j).style.stroke=j===hot?RC[j]:'';$('#axt'+j).style.fill=j===hot?RC[j]:'';dots[j].style.stroke=j===hot?'#fff':''});tip.style.borderColor=c;const b=tip.querySelector('b');if(b)b.style.color=c};
+  const poly=$('#rpoly'),dots=ax.map((_,i)=>$('#rd'+i));const RC=['#3dd6f5','#2ecc71','#a77bff','#ff9933','#ff5a7a','#ffd400'];dots.forEach((d,i)=>{d.style.fill=RC[i];$('#axt'+i).style.setProperty('--lc',RC[i])});
+  const paint=()=>{const c=hot>=0?RC[hot]:'#e8b04b';poly.style.stroke=c;poly.style.fill=hot>=0?`color-mix(in srgb,${c} 30%,transparent)`:'';poly.style.filter=`drop-shadow(0 0 12px ${c})`;ax.forEach((_,j)=>{$('#ax'+j).style.stroke=j===hot?RC[j]:'';dots[j].style.stroke=j===hot?'#fff':''});tip.style.borderColor=c;const b=tip.querySelector('b');if(b)b.style.color=c};
   let shown=0,hover=false,t0=0,hot=-1;
   function draw(k,t){const v=ax.map((a,i)=>{let s=a[1]*k;if(hover)s*=1+.06*Math.sin(t/260+i*1.1);if(i===hot)s=Math.min(1.04,s*1.07);return s});
     poly.setAttribute('points',v.map((s,i)=>pt(i,R*s).join(',')).join(' '));v.forEach((s,i)=>{const[x,y]=pt(i,R*s);dots[i].setAttribute('cx',x);dots[i].setAttribute('cy',y);dots[i].setAttribute('r',i===hot?9:hover?6+1.5*Math.sin(t/200+i):6)})}
@@ -1892,7 +1896,7 @@ renderTk();renderEv();
   new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){requestAnimationFrame(loop);o.disconnect()}}),{threshold:.3}).observe(svg);
   box.addEventListener('mouseenter',()=>{if(!hover){hover=true;requestAnimationFrame(loop)}});
   box.addEventListener('mouseleave',()=>{hover=false;hot=-1;tip.style.opacity=0;paint();ax.forEach((_,i)=>{$('#ax'+i).classList.remove('hot');$('#axt'+i).classList.remove('hot')})});
-  box.addEventListener('mousemove',e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)/r.width*520-60,sy=(e.clientY-r.top)/r.height*470-30;
+  box.addEventListener('mousemove',e=>{const r=svg.getBoundingClientRect(),sx=(e.clientX-r.left)/r.width*600-100,sy=(e.clientY-r.top)/r.height*490-40;
     let ang=Math.atan2(sx-cx,-(sy-cy));if(ang<0)ang+=2*Math.PI;const i=Math.round(ang/(2*Math.PI/n))%n,d=Math.hypot(sx-cx,sy-cy);
     hot=d<R+60?i:-1;ax.forEach((_,j)=>{$('#ax'+j).classList.toggle('hot',j===hot);$('#axt'+j).classList.toggle('hot',j===hot)});
     if(hot>=0){const b=box.getBoundingClientRect(),dr=dots[hot].getBoundingClientRect();tip.innerHTML=`${ax[hot][0]}<b>${Math.round(ax[hot][1]*100)}%</b>`;tip.style.left=(dr.left-b.left+dr.width/2)+'px';tip.style.top=(dr.top-b.top)+'px';tip.style.opacity=1}else tip.style.opacity=0;paint()});
