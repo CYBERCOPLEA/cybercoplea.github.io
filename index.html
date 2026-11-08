@@ -807,6 +807,11 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
 .idf-rows b{color:#fff!important;font-weight:700!important}
 .idf-rows span{color:#fff;font-weight:700}
 .idf-strip span{color:#fff;font-weight:700}
+
+/* ===== TRAINED & CERTIFIED BY — bigger yellow label, coloured boxes ===== */
+.mq-label{font:800 13.75px Inter,sans-serif!important;color:#ffd400!important;letter-spacing:3.5px;text-shadow:0 0 12px rgba(255,212,0,.35)}
+.mq-item{border:1.5px solid var(--mc)!important;color:#fff!important;background:linear-gradient(150deg,color-mix(in srgb,var(--mc) 30%,#0f1f38),color-mix(in srgb,var(--mc) 8%,#0f1f38))!important;box-shadow:0 4px 0 rgba(0,0,0,.35),0 8px 18px color-mix(in srgb,var(--mc) 18%,transparent);font-weight:700}
+.mq-item:hover{color:var(--mc)!important;background:linear-gradient(150deg,color-mix(in srgb,var(--mc) 45%,#0f1f38),color-mix(in srgb,var(--mc) 15%,#0f1f38))!important;transform:translateY(-3px)}
 </style>
 </head>
 <body>
@@ -1607,7 +1612,8 @@ card.addEventListener('mouseleave',()=>card.style.transform='');
 
 /* ---------- agency marquee ---------- */
 const ag=[['🛡️','EC-Council'],['🇮🇳','CERT-In'],['🏛️','I4C · MHA'],['🦅','U.S. DHS'],['🔐','ISEA · MeitY'],['🖥️','NIELIT'],['📘','NCERT'],['🎓','edX'],['💻','Computer Society of India'],['⚙️','Institution of Engineers'],['🏦','HDFC Bank'],['🚔','UP Police HQ'],['🧭','CRCIDF'],['📗','NIIT']];
-$('#mq').innerHTML=[...ag,...ag].map(([i,t])=>`<span class="mq-item"><i>${i}</i>${t}</span>`).join('');
+const MQC=['#ff9933','#3dd6f5','#2ecc71','#4f8cff','#e8b04b','#ff5a7a','#a77bff','#14d3b0','#ffcc33','#ff7a45','#5ad1ff','#7ed957','#ff6fd8','#ffd400'];
+$('#mq').innerHTML=[...ag,...ag].map(([i,t],k)=>`<span class="mq-item" style="--mc:${MQC[k%ag.length%MQC.length]}"><i>${i}</i>${t}</span>`).join('');
 
 /* ---------- cyber network canvas ---------- */
 (function(){const c=$('#net');if(!c)return;const x=c.getContext('2d');let W,H,P=[];
