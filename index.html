@@ -1218,6 +1218,17 @@ h2+.ch-grid,h2+.ht-grid,h2+.cards,h2+.flow,h2+.tl,h2+.cgrid{margin-top:30px}
 .fgrid a.fx,.fgrid a.fsoc{gap:11px!important;min-height:34px}
 .fsoc-all{display:inline-block;margin-top:14px!important;font-size:14.5px!important;font-weight:600}
 .fbot{font-size:14px}
+
+/* ===== BUTTONS — text & icon fitted to height (all pages) ===== */
+.btn{font-size:17.5px!important;padding:14px 26px!important;gap:10px!important;line-height:1.2;min-height:54px;align-items:center}
+.btn .arr{font-size:1.15em;line-height:1}
+.btn .bi{font-size:1.25em;line-height:1;display:inline-block}
+.btn.sm{font-size:16px!important;padding:11px 18px!important;min-height:44px;gap:8px!important}
+.btn-gold,.btn-ghost{font-weight:700!important}
+.mini-soc a{width:46px!important;height:46px!important;border-radius:12px!important}
+.mini-soc a svg{width:21px!important;height:21px!important}
+.mini-soc{gap:12px!important}
+@media(max-width:560px){.btn{font-size:16px!important;padding:12px 20px!important;min-height:48px}}
 </style>
 </head>
 <body>
@@ -1225,7 +1236,7 @@ h2+.ch-grid,h2+.ht-grid,h2+.cards,h2+.flow,h2+.tl,h2+.cgrid{margin-top:30px}
 <div class="shp-bg" id="shpBg"><div class="shp" role="dialog" aria-label="Share profile">
   <h3><span data-hi="प्रोफ़ाइल शेयर करें">Share this profile</span><button id="shpX" aria-label="Close">✕</button></h3>
   <p data-hi="लिंक कॉपी करें या सीधे किसी ऐप पर भेजें।">Copy the link or send it straight to an app.</p>
-  <div class="shp-link"><input id="shpUrl" readonly><button class="btn btn-gold sm" id="shpCopy">📋 <span data-hi="कॉपी">Copy</span></button></div>
+  <div class="shp-link"><input id="shpUrl" readonly><button class="btn btn-gold sm" id="shpCopy"><span class="bi">📋</span> <span data-hi="कॉपी">Copy</span></button></div>
   <div class="shp-grid" id="shpGrid"></div>
 </div></div>
 <div id="prog"></div><a class="vt-badge" data-go="profile" aria-label="Cyber Cop — open profile" title="Vijay Tomar · Cyber Cop">
@@ -1448,7 +1459,7 @@ h2+.ch-grid,h2+.ht-grid,h2+.cards,h2+.flow,h2+.tl,h2+.cgrid{margin-top:30px}
           <div><b style="font-size:19px">cybercrime.gov.in</b><p>National Cyber Crime Reporting Portal.</p></div>
         </a>
       </div>
-      <div style="text-align:center;margin:-10px 0 40px"><a class="btn btn-ghost" data-go="tools">🧰 <span data-hi="साइबर टूल्स खोलें — लिंक जाँच, शिकायत सहायक और अधिक">Open Cyber Tools — link checker, complaint helper & more</span> <span class="arr">→</span></a></div>
+      <div style="text-align:center;margin:-10px 0 40px"><a class="btn btn-ghost" data-go="tools"><span class="bi">🧰</span> <span data-hi="साइबर टूल्स खोलें — लिंक जाँच, शिकायत सहायक और अधिक">Open Cyber Tools — link checker, complaint helper & more</span> <span class="arr">→</span></a></div>
       <div class="tips">
         <div class="tip-c reveal"><b>🔒 Never share OTP / PIN</b><span>No bank, police or company will ever ask for it.</span><span class="hi">OTP किसी को न बताएं।</span></div>
         <div class="tip-c reveal"><b>📞 “Digital arrest” is a scam</b><span>Police never arrest anyone over a video call.</span><span class="hi">डिजिटल अरेस्ट जैसा कुछ नहीं होता।</span></div>
@@ -1524,9 +1535,9 @@ h2+.ch-grid,h2+.ht-grid,h2+.cards,h2+.flow,h2+.tl,h2+.cgrid{margin-top:30px}
           <div class="console-b" id="cons"></div>
         </div>
         <div class="pf-actions">
-          <button class="btn btn-gold sm" id="pfPrint">🖨️ <span data-hi="प्रोफ़ाइल PDF सेव करें">Save profile as PDF</span></button>
-          <a class="btn btn-ghost sm" data-go="certificates">📜 <span data-hi="प्रमाणपत्र">Certificates</span> <span class="arr">→</span></a>
-          <a class="btn btn-ghost sm" data-go="contact">✉️ <span data-hi="संपर्क">Contact</span> <span class="arr">→</span></a>
+          <button class="btn btn-gold sm" id="pfPrint"><span class="bi">🖨️</span> <span data-hi="प्रोफ़ाइल PDF सेव करें">Save profile as PDF</span></button>
+          <a class="btn btn-ghost sm" data-go="certificates"><span class="bi">📜</span> <span data-hi="प्रमाणपत्र">Certificates</span> <span class="arr">→</span></a>
+          <a class="btn btn-ghost sm" data-go="contact"><span class="bi">✉️</span> <span data-hi="संपर्क">Contact</span> <span class="arr">→</span></a>
         </div>
       </div>
     </div>
@@ -1805,7 +1816,7 @@ h2+.ch-grid,h2+.ht-grid,h2+.cards,h2+.flow,h2+.tl,h2+.cgrid{margin-top:30px}
         <div class="tg">
           <div>
             <input class="inp" id="lkIn" placeholder="e.g. http://sbi-kyc-update.xyz/login" autocomplete="off" spellcheck="false">
-            <div class="btnrow"><button class="btn btn-gold sm" id="lkBtn">🔍 <span data-hi="जाँचें">Check link</span></button><button class="btn btn-ghost sm" id="lkDemo" data-hi="उदाहरण देखें">Try an example</button></div>
+            <div class="btnrow"><button class="btn btn-gold sm" id="lkBtn"><span class="bi">🔍</span> <span data-hi="जाँचें">Check link</span></button><button class="btn btn-ghost sm" id="lkDemo" data-hi="उदाहरण देखें">Try an example</button></div>
             <p class="note" data-hi="यह संकेतों पर आधारित जाँच है, गारंटी नहीं। शक हो तो लिंक न खोलें।">This is a pattern-based check, not a guarantee. If in doubt, don't open it.</p>
           </div>
           <div><ul class="checks" id="lkOut"><li class="warn"><span class="st">i</span><span data-hi="परिणाम यहाँ दिखेंगे।">Results will appear here.</span></li></ul><div id="lkV"></div></div>
@@ -1857,7 +1868,7 @@ h2+.ch-grid,h2+.ht-grid,h2+.cards,h2+.flow,h2+.tl,h2+.cgrid{margin-top:30px}
           <div>
             <label class="lb" data-hi="तैयार सारांश">Ready summary</label>
             <div class="out" id="cpOut"></div>
-            <div class="btnrow"><button class="btn btn-gold sm" id="cpCopy">📋 <span data-hi="कॉपी करें">Copy</span></button><button class="btn btn-ghost sm" id="cpDl">⬇️ <span data-hi="डाउनलोड">Download .txt</span></button><a class="btn btn-ghost sm" href="https://cybercrime.gov.in" target="_blank" rel="noopener">🌐 <span data-hi="पोर्टल खोलें">Open portal</span></a></div>
+            <div class="btnrow"><button class="btn btn-gold sm" id="cpCopy"><span class="bi">📋</span> <span data-hi="कॉपी करें">Copy</span></button><button class="btn btn-ghost sm" id="cpDl">⬇️ <span data-hi="डाउनलोड">Download .txt</span></button><a class="btn btn-ghost sm" href="https://cybercrime.gov.in" target="_blank" rel="noopener"><span class="bi">🌐</span> <span data-hi="पोर्टल खोलें">Open portal</span></a></div>
             <p class="note" data-hi="यह केवल आपकी सुविधा के लिए है — आधिकारिक शिकायत 1930 या cybercrime.gov.in पर ही दर्ज करें।">This is only a helper — register the official complaint on 1930 or cybercrime.gov.in.</p>
           </div>
         </div>
@@ -1931,7 +1942,7 @@ h2+.ch-grid,h2+.ht-grid,h2+.cards,h2+.flow,h2+.tl,h2+.cgrid{margin-top:30px}
         <div class="ht-box" style="--hc:#ff5a7a"><h4>🕵️ About the fraudster</h4><ul><li>Phone numbers, UPI IDs, account numbers</li><li>Website links, app names</li><li>Social media profile links, email IDs</li></ul></div>
         <div class="ht-box" style="--hc:#ffd400"><h4>🧾 Evidence</h4><ul><li>Screenshots of chats, calls, payments</li><li>SMS / debit alerts</li><li>Any file under 5 MB per upload is easiest</li></ul></div>
       </div>
-      <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-gold" data-go="tools">📝 Use Complaint Helper <span class="arr">→</span></a><a class="btn btn-ghost" data-go="tools">✅ Evidence Checklist <span class="arr">→</span></a></div>
+      <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-gold" data-go="tools"><span class="bi">📝</span> Use Complaint Helper <span class="arr">→</span></a><a class="btn btn-ghost" data-go="tools"><span class="bi">✅</span> Evidence Checklist <span class="arr">→</span></a></div>
     </div>
   </section>
 
@@ -2309,8 +2320,8 @@ let ghTimer;function gh(){const v=$('#ghIn').value;if(!v)return;const m=(Date.no
   const h=Math.floor(m/60),mm=Math.floor(m%60);$('#ghT').textContent=h>=48?Math.floor(h/24)+T('d','दि'):`${pad(h)}:${pad(mm)}`;
   const frac=Math.min(m/60,1),col=m<=60?'#2ecc71':m<=24*60?'#e8b04b':'#ff5a5f';const a=$('#ghArc');a.style.strokeDashoffset=540*(1-frac);a.style.stroke=col;
   const adv=$('#ghAdv');adv.style.borderColor=col;adv.style.background=col+'1f';
-  adv.innerHTML=m<=60?`<b style="color:${col}">${T('You are inside the golden hour!','आप गोल्डन आवर में हैं!')}</b><br>${T('Call 1930 right now — the chance of holding the money is highest.','अभी 1930 पर कॉल करें — पैसा रोकने की संभावना सबसे अधिक है।')}<br><a class="btn btn-gold sm" style="margin-top:12px" href="tel:1930">📞 1930</a>`
-   :m<=24*60?`<b style="color:${col}">${T('Golden hour has passed — but act now.','गोल्डन आवर बीत गया — फिर भी तुरंत कार्रवाई करें।')}</b><br>${T('Money may still be in the chain. Call 1930 and file on cybercrime.gov.in today.','पैसा अभी भी चेन में हो सकता है। आज ही 1930 और cybercrime.gov.in पर शिकायत करें।')}<br><a class="btn btn-gold sm" style="margin-top:12px" href="tel:1930">📞 1930</a>`
+  adv.innerHTML=m<=60?`<b style="color:${col}">${T('You are inside the golden hour!','आप गोल्डन आवर में हैं!')}</b><br>${T('Call 1930 right now — the chance of holding the money is highest.','अभी 1930 पर कॉल करें — पैसा रोकने की संभावना सबसे अधिक है।')}<br><a class="btn btn-gold sm" style="margin-top:12px" href="tel:1930"><span class="bi">📞</span> 1930</a>`
+   :m<=24*60?`<b style="color:${col}">${T('Golden hour has passed — but act now.','गोल्डन आवर बीत गया — फिर भी तुरंत कार्रवाई करें।')}</b><br>${T('Money may still be in the chain. Call 1930 and file on cybercrime.gov.in today.','पैसा अभी भी चेन में हो सकता है। आज ही 1930 और cybercrime.gov.in पर शिकायत करें।')}<br><a class="btn btn-gold sm" style="margin-top:12px" href="tel:1930"><span class="bi">📞</span> 1930</a>`
    :`<b style="color:${col}">${T('It has been more than a day.','एक दिन से अधिक हो गया।')}</b><br>${T('Still report it — file on cybercrime.gov.in and keep all evidence. Every report helps trace the gang.','फिर भी शिकायत ज़रूर करें — cybercrime.gov.in पर दर्ज करें और सबूत संभालें।')}`;
   ghTimer=setTimeout(gh,30000)}
 $('#ghIn').addEventListener('input',gh);$$('[data-gh]').forEach(b=>b.onclick=()=>{$('#ghIn').value=toLocal(new Date(Date.now()-b.dataset.gh*60000));gh()});
