@@ -1160,7 +1160,7 @@ html.light .fsoc.bx:hover b{color:#000}
 .fx:hover .xi{transform:translateY(-3px) scale(1.08);box-shadow:0 6px 14px color-mix(in srgb,var(--xc) 40%,transparent)}
 .fx:hover b{color:var(--xc)}
 html.light .fx .xi{box-shadow:0 3px 0 rgba(15,31,56,.12)}
-@media(max-width:480px){.fexp{grid-template-columns:1fr}}
+
 
 /* ===== SITE-WIDE READABILITY PASS ===== */
 .eyebrow{font:800 15px Inter,sans-serif!important;letter-spacing:3.5px!important;display:inline-flex;align-items:center;gap:10px}
@@ -1198,6 +1198,26 @@ h2+.ch-grid,h2+.ht-grid,h2+.cards,h2+.flow,h2+.tl,h2+.cgrid{margin-top:30px}
 .wz-card p{font-size:16px}
 .hcard .k,.jr-tag,.lv .k,.qn{font-size:13px!important;font-family:Inter,sans-serif!important;font-weight:800!important}
 .hcard h3{font-size:24px}
+
+/* ===== FOOTER — balanced sizing ===== */
+.fgrid{grid-template-columns:1.25fr 1.2fr .95fr 1.3fr!important;gap:40px!important;align-items:start}
+@media(max-width:1100px){.fgrid{grid-template-columns:1fr 1fr!important}}
+@media(max-width:560px){.fgrid{grid-template-columns:1fr!important}}
+.fgrid h5{font:800 14px Inter,sans-serif!important;letter-spacing:2.5px!important;margin-bottom:18px!important;color:var(--text)}
+.fbrand img{width:56px!important;height:56px!important}
+.fbrand b{font-size:19px!important;font-family:Sora,Inter,sans-serif!important;font-weight:800!important}
+.fgrid h5{font-family:Inter,sans-serif!important}
+@media(max-width:560px){.fexp{grid-template-columns:1fr 1fr!important}}
+.fgrid>div:first-child p{font-size:15px!important;line-height:1.6}
+.fexp,.fsoc-list{gap:12px 18px!important}
+.fhl{display:grid;gap:12px}
+.fx .xi,.fsoc .fi{width:30px!important;height:30px!important;border-radius:9px!important;font-size:15px!important}
+.fsoc .fi svg{width:15px!important;height:15px!important}
+.fx b,.fsoc b{font-size:15px!important;font-weight:600!important;line-height:1.25}
+.fsoc small,.fx small{display:block;font-size:12.5px!important;color:var(--muted);line-height:1.2}
+.fgrid a.fx,.fgrid a.fsoc{gap:11px!important;min-height:34px}
+.fsoc-all{display:inline-block;margin-top:14px!important;font-size:14.5px!important;font-weight:600}
+.fbot{font-size:14px}
 </style>
 </head>
 <body>
@@ -1987,7 +2007,7 @@ h2+.ch-grid,h2+.ht-grid,h2+.cards,h2+.flow,h2+.tl,h2+.cgrid{margin-top:30px}
         <p>Cyber Crime Police Station, Ghaziabad · Uttar Pradesh Police. Making the digital world safer — one citizen at a time.</p>
       </div>
       <div><h5>Explore</h5><div class="fexp"><a class="fx" data-go="profile" style="--xc:#a77bff"><span class="xi">👤</span><b>My Profile</b></a><a class="fx" data-go="certificates" style="--xc:#3dd6f5"><span class="xi">📜</span><b>Certificates</b></a><a class="fx" data-go="workshops" style="--xc:#2ecc71"><span class="xi">🎓</span><b>Workshops</b></a><a class="fx" data-go="award" style="--xc:#e8b04b"><span class="xi">🏅</span><b>Award</b></a><a class="fx" data-go="press" style="--xc:#ff7a45"><span class="xi">📰</span><b>Press & Media</b></a><a class="fx" data-go="tools" style="--xc:#4f8cff"><span class="xi">🧰</span><b>Cyber Tools</b></a><a class="fx" data-go="howto" style="--xc:#ff3b45"><span class="xi">🚨</span><b>How to Report</b></a></div></div>
-      <div><h5>Helplines</h5><a href="tel:1930">📞 1930 · Cyber Fraud</a><a href="tel:112">🚨 112 · Emergency</a><a href="https://cybercrime.gov.in" target="_blank" rel="noopener">🌐 cybercrime.gov.in</a></div>
+      <div><h5>Helplines</h5><div class="fhl"><a class="fx hlx" href="tel:1930" style="--xc:#ff3b45"><span class="xi">📞</span><span class="xt"><b>1930</b><small>Cyber fraud helpline</small></span></a><a class="fx hlx" href="tel:112" style="--xc:#ffb020"><span class="xi">🚨</span><span class="xt"><b>112</b><small>Emergency</small></span></a><a class="fx hlx" href="https://cybercrime.gov.in" target="_blank" rel="noopener" style="--xc:#3dd6f5"><span class="xi">🌐</span><span class="xt"><b>cybercrime.gov.in</b><small>Report online</small></span></a></div></div>
       <div><h5>Follow</h5><div class="fsoc-list"><a class="fsoc bx" href="https://x.com/LEA_TOMAR" target="_blank" rel="noopener"><span class="fi"><svg viewBox="0 0 24 24"><path d="M18.2 2h3.4l-7.4 8.5L23 22h-6.8l-5.3-7-6.1 7H1.4l7.9-9L1 2h7l4.8 6.4Zm-1.2 18h1.9L7.1 3.9H5.1Z"/></svg></span><span><b>X</b><small>@LEA_TOMAR</small></span></a><a class="fsoc bli" href="https://www.linkedin.com/in/lea-tomar/" target="_blank" rel="noopener"><span class="fi"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9h4v12H3Zm7 0h3.8v1.7h.1c.5-1 1.8-2 3.8-2 4 0 4.8 2.6 4.8 6V21h-4v-5.6c0-1.3 0-3-1.9-3s-2.1 1.4-2.1 2.9V21h-4Z"/></svg></span><span><b>LinkedIn</b><small>lea-tomar</small></span></a><a class="fsoc byt" href="https://www.youtube.com/@cybercoplea" target="_blank" rel="noopener"><span class="fi"><svg viewBox="0 0 24 24"><path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6Z"/></svg></span><span><b>YouTube</b><small>@cybercoplea</small></span></a><a class="fsoc big" href="https://www.instagram.com/LEA_TOMAR/" target="_blank" rel="noopener"><span class="fi"><svg viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10Zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4ZM17.3 5.5a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4ZM12 2c-2.7 0-3 0-4.1.1C4.3 2.2 2.2 4.3 2.1 7.9 2 9 2 9.3 2 12s0 3 .1 4.1c.1 3.6 2.2 5.7 5.8 5.8 1.1.1 1.4.1 4.1.1s3 0 4.1-.1c3.6-.1 5.7-2.2 5.8-5.8.1-1.1.1-1.4.1-4.1s0-3-.1-4.1c-.1-3.6-2.2-5.7-5.8-5.8C15 2 14.7 2 12 2Z"/></svg></span><span><b>Instagram</b><small>@LEA_TOMAR</small></span></a><a class="fsoc btg" href="https://t.me/cybercoptomar" target="_blank" rel="noopener"><span class="fi"><svg viewBox="0 0 24 24"><path d="M21.9 4.3 18.7 19.4c-.2 1-.9 1.3-1.8.8l-4.8-3.6-2.3 2.2c-.3.3-.5.5-1 .5l.3-4.9 9-8.1c.4-.3-.1-.5-.6-.2L6.4 13 1.6 11.5c-1-.3-1-1 .2-1.5L20.6 2.8c.9-.3 1.6.2 1.3 1.5Z"/></svg></span><span><b>Telegram</b><small>cybercoptomar</small></span></a><a class="fsoc bfb" href="https://www.facebook.com/COPTOMAR" target="_blank" rel="noopener"><span class="fi"><svg viewBox="0 0 24 24"><path d="M24 12a12 12 0 1 0-13.9 11.9v-8.4h-3V12h3V9.4c0-3 1.8-4.7 4.5-4.7 1.3 0 2.7.2 2.7.2v3h-1.5c-1.5 0-2 .9-2 1.9V12h3.4l-.5 3.5h-2.9v8.4A12 12 0 0 0 24 12Z"/></svg></span><span><b>Facebook</b><small>COPTOMAR</small></span></a></div><a data-go="contact" class="fsoc-all">All channels →</a></div>
     </div>
     <div class="fbot">
