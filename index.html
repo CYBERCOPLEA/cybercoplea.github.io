@@ -893,7 +893,7 @@ label.lb{display:block;font:600 12.5px Inter;color:var(--muted);margin:12px 0 6p
 .mq-track{animation:none!important;will-change:transform}
 
 /* ===== NAV TABS — individual coloured pills ===== */
-.tab[data-go="home"]{--tc:#ff9933}.tab[data-go="profile"]{--tc:#a77bff}.tab[data-go="certificates"]{--tc:#3dd6f5}.tab[data-go="workshops"]{--tc:#2ecc71}.tab[data-go="award"]{--tc:#e8b04b}.tab[data-go="press"]{--tc:#ff7a45}.tab[data-go="tools"]{--tc:#4f8cff}.tab[data-go="contact"]{--tc:#ff5a7a}
+.tab[data-go="home"]{--tc:#ff9933}.tab[data-go="profile"]{--tc:#a77bff}.tab[data-go="certificates"]{--tc:#3dd6f5}.tab[data-go="workshops"]{--tc:#2ecc71}.tab[data-go="award"]{--tc:#e8b04b}.tab[data-go="press"]{--tc:#ff7a45}.tab[data-go="tools"]{--tc:#4f8cff}.tab[data-go="contact"]{--tc:#ff5a7a}.tab[data-go="howto"]{--tc:#ff3b45}
 .tabs{gap:5px!important;align-items:center}
 .tab{padding:6px 10px!important;border-radius:999px!important;font-weight:700!important;font-size:13px!important;color:var(--ink)!important;border:1.5px solid color-mix(in srgb,var(--tc) 70%,transparent);background:linear-gradient(150deg,color-mix(in srgb,var(--tc) 26%,var(--c1)),color-mix(in srgb,var(--tc) 8%,var(--c0)));box-shadow:0 3px 0 rgba(0,0,0,.4),inset 0 1px 0 rgba(255,255,255,.08);transition:transform .2s,box-shadow .25s,background .25s}
 .tab:hover{transform:translateY(-2px);background:linear-gradient(150deg,color-mix(in srgb,var(--tc) 45%,var(--c1)),color-mix(in srgb,var(--tc) 15%,var(--c0)));box-shadow:0 5px 0 rgba(0,0,0,.4),0 0 16px color-mix(in srgb,var(--tc) 45%,transparent)}
@@ -915,7 +915,7 @@ html.light .tg-knob{left:23px;background:#fff7d6}
 html.light .tg-sun{display:block}html.light .tg-moon{display:none}
 .tg-lbl{font-size:12.5px}
 @media(max-width:1300px){.theme-tg{justify-content:center}}
-@media(min-width:1301px) and (max-width:1500px){.tg-lbl{display:none}}
+@media(min-width:1521px) and (max-width:1640px){.tg-lbl{display:none}}
 
 html.light{--c0:#f3f6fb;--c1:#ffffff;--c2:#f2f6fc;--c3:#eef3fa;--c4:#ffffff;--c5:#f6f8fc;--c6:#ffffff;--c7:#e9f0fb;--c8:#e3ecf9;--c9:#b9c8de;
   --ink:#0f1f38;--ink2:#3a4d6b;--ink3:#2c3e5c;--goldtxt:#9a6516;--text:#0f1f38;--muted:#52627c;--line:#d5dfec;
@@ -1051,6 +1051,58 @@ html.light #loader{background:#f3f6fb}
   .ws-photo{right:max(0px,calc(50% - 720px))}
 }
 .pf-stage::after{left:-60%!important;right:-60%!important}
+
+/* ===== HOW TO REPORT ===== */
+.ht-head{background:linear-gradient(120deg,rgba(255,59,69,.14),transparent 55%)}
+.ht-sos{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px;max-width:900px}
+@media(max-width:760px){.ht-sos{grid-template-columns:1fr}}
+.sos{padding:16px 18px;border-radius:16px;border:1.5px solid var(--sc);background:linear-gradient(150deg,color-mix(in srgb,var(--sc) 28%,var(--c1)),var(--c1));box-shadow:0 5px 0 rgba(0,0,0,.3);transition:.25s}
+.sos:hover{transform:translateY(-3px);box-shadow:0 8px 0 rgba(0,0,0,.3),0 0 20px color-mix(in srgb,var(--sc) 40%,transparent)}
+.sos b{display:block;font:800 24px Sora,Inter;color:var(--sc)}.sos span{font-size:13px;color:var(--ink2)}
+.sos.red{--sc:#ff3b45}.sos.blue{--sc:#3dd6f5}.sos.amber{--sc:#ffb020}
+.rt{display:grid;grid-template-columns:380px 1fr;gap:24px;align-items:start}
+@media(max-width:900px){.rt{grid-template-columns:1fr}}
+.rt-pick{display:grid;gap:10px}
+.rt-btn{display:flex;gap:12px;align-items:center;text-align:left;padding:14px 16px;border-radius:14px;border:1.5px solid color-mix(in srgb,var(--rc) 55%,transparent);background:color-mix(in srgb,var(--rc) 10%,var(--c1));color:var(--text);cursor:pointer;font-family:inherit;transition:.2s}
+.rt-btn i{font-style:normal;font-size:26px}.rt-btn b{display:block;font-size:14.5px}.rt-btn small{font-size:12.5px;color:var(--muted)}
+.rt-btn:hover{transform:translateX(4px)}
+.rt-btn.on{background:color-mix(in srgb,var(--rc) 30%,var(--c1));border-color:var(--rc);box-shadow:0 0 18px color-mix(in srgb,var(--rc) 35%,transparent)}
+.rt-panel{display:none;padding:26px;border-radius:20px;border:1.5px solid var(--rc);background:linear-gradient(160deg,color-mix(in srgb,var(--rc) 16%,var(--c1)),var(--c2));box-shadow:0 14px 30px rgba(0,0,0,.25);animation:fade .4s}
+.rt-panel.on{display:block}
+.rt-panel h3{font:800 20px Sora,Inter;margin-bottom:16px;color:var(--ink)}
+.rt-steps{list-style:none;counter-reset:s;display:grid;gap:12px}
+.rt-steps li{counter-increment:s;position:relative;padding:14px 16px 14px 60px;border-radius:14px;background:rgba(var(--bg-rgb),.5);border:1px solid var(--line)}
+.rt-steps li::before{content:counter(s);position:absolute;left:14px;top:50%;transform:translateY(-50%);width:32px;height:32px;border-radius:50%;display:grid;place-items:center;font:800 15px Inter;color:#0a1628;background:var(--rc)}
+.rt-steps b{display:block;font-size:15.5px;color:var(--ink)}.rt-steps span{font-size:14px;color:var(--ink2)}
+.wz{border-radius:22px;padding:26px;background:var(--c1);border:1px solid var(--line);box-shadow:0 14px 30px rgba(0,0,0,.2)}
+.wz-rail{display:flex;gap:6px;margin-bottom:22px;flex-wrap:wrap}
+.wz-rail button{flex:1;min-width:90px;padding:9px 8px;border-radius:10px;border:1px solid var(--line);background:var(--c2);color:var(--muted);font:700 12.5px Inter;cursor:pointer}
+.wz-rail button.done{color:var(--ink);border-color:#2ecc71}
+.wz-rail button.on{background:linear-gradient(135deg,var(--gold),var(--saffron));color:#1a1100;border-color:transparent}
+.wz-card{min-height:170px;display:grid;grid-template-columns:90px 1fr;gap:22px;align-items:center;animation:fade .35s}
+@media(max-width:600px){.wz-card{grid-template-columns:1fr}}
+.wz-card .wi{width:90px;height:90px;border-radius:22px;display:grid;place-items:center;font-size:44px;background:linear-gradient(145deg,rgba(61,214,245,.25),rgba(61,214,245,.05));border:1px solid rgba(61,214,245,.4)}
+.wz-card h3{font:800 21px Sora,Inter;color:var(--ink);margin-bottom:6px}.wz-card p{color:var(--ink2);font-size:15px}
+.wz-card .tipx{margin-top:10px;font-size:13.5px;color:var(--goldtxt)}
+.wz-nav{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+#wzN{font:600 13px 'JetBrains Mono';color:var(--muted)}
+.ht-grid,.ch-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:16px}
+.ht-box,.ch{padding:20px;border-radius:16px;border:1.5px solid var(--hc);background:linear-gradient(160deg,color-mix(in srgb,var(--hc) 16%,var(--c1)),var(--c1));transition:.25s}
+.ht-box h4{font-size:16.5px;margin-bottom:10px;color:var(--ink)}
+.ht-box ul{list-style:none;display:grid;gap:6px;font-size:14px;color:var(--ink2)}
+.ht-box li::before{content:"✓ ";color:var(--hc);font-weight:800}
+.ch{display:flex;flex-direction:column;gap:4px}.ch:hover{transform:translateY(-4px);box-shadow:0 12px 26px color-mix(in srgb,var(--hc) 30%,transparent)}
+.ch i{font-style:normal;font-size:28px}.ch b{font:800 18px Sora,Inter;color:var(--hc)}.ch span{font-size:13.5px;color:var(--ink2)}
+.nxt{margin-bottom:30px}
+.ht-dont{padding:22px;border-radius:16px;border:1.5px solid #ff3b45;background:color-mix(in srgb,#ff3b45 10%,var(--c1))}
+.ht-dont h4{margin-bottom:12px;color:var(--ink)}
+.ht-dont .chip{background:color-mix(in srgb,#ff3b45 14%,transparent);border-color:rgba(255,59,69,.45);color:var(--ink)}
+html.light .rt-steps li::before{color:#fff}
+@media(max-width:1520px){
+  .burger{display:block}
+  .tabs{position:absolute;top:66px;left:0;right:0;flex-direction:column;background:var(--navy2);border-bottom:1px solid var(--line);padding:10px 16px;display:none;z-index:80}
+  .tabs.open{display:flex}.tab .tip,.ink{display:none}.tab{padding:12px;text-align:center}
+}
 </style>
 </head>
 <body>
@@ -1097,6 +1149,7 @@ html.light #loader{background:#f3f6fb}
       <a class="tab" data-go="press"><span data-hi="प्रेस व मीडिया">Press &amp; Media</span><span class="tip"><b>📰 Press &amp; Media</b>“Dial &amp; Save 1930” campaign and coverage.</span></a>
       <a class="tab" data-go="tools"><span data-hi="साइबर टूल्स">Cyber Tools</span><span class="tip"><b>🧰 Cyber Tools</b>Link checker, password tester, golden-hour timer, complaint helper, FAQs.</span></a>
       <a class="tab" data-go="contact"><span data-hi="संपर्क करें">Get in touch</span><span class="tip"><b>✉️ Get in touch</b>Social channels and official reporting links.</span></a>
+      <a class="tab" data-go="howto"><span data-hi="शिकायत कैसे करें">How to Report</span><span class="tip"><b>🚨 How to Report</b>Step-by-step guide: 1930, cybercrime.gov.in, Sanchar Saathi, banks and more.</span></a>
       <button class="tab theme-tg" id="themeTg" type="button" aria-label="Switch day / night theme"><span class="tg-track"><span class="tg-knob"><span class="tg-sun">☀️</span><span class="tg-moon">🌙</span></span></span><span class="tg-lbl" data-hi="डे / नाइट">Day / Night</span></button>
       <span class="ink" id="ink"></span>
     </div>
@@ -1716,6 +1769,91 @@ html.light #loader{background:#f3f6fb}
   </section>
 </div>
 
+<!-- ================= HOW TO REPORT ================= -->
+<div class="page" id="p-howto">
+  <div class="page-head ht-head"><div class="wrap"><div class="crumb"><a data-go="home">Home</a> / How to Report</div>
+    <h2 data-hi="साइबर अपराध की शिकायत कैसे करें">How to report cyber crime</h2>
+    <p class="sec-lead" style="margin:0" data-hi="ठगी हुई? घबराएँ नहीं — सही जगह, सही तरीके से, जल्दी शिकायत करें।">Don't panic — report quickly, in the right place, the right way. This guide shows you exactly where to go.</p>
+    <div class="ht-sos">
+      <a href="tel:1930" class="sos red"><b>1930</b><span data-hi="वित्तीय साइबर ठगी">Financial cyber fraud · 24×7</span></a>
+      <a href="https://cybercrime.gov.in" target="_blank" rel="noopener" class="sos blue"><b>cybercrime.gov.in</b><span data-hi="ऑनलाइन शिकायत पोर्टल">National reporting portal</span></a>
+      <a href="tel:112" class="sos amber"><b>112</b><span data-hi="आपातकाल">Emergency · immediate danger</span></a>
+    </div>
+  </div></div>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow" data-hi="चरण 1">Step 1</div>
+      <h2 data-hi="आपके साथ क्या हुआ?">What happened to you?</h2>
+      <p class="sec-lead" data-hi="नीचे चुनें — आपके मामले के लिए सही रास्ता दिखेगा।">Pick the option that matches — you'll see the exact route for your case.</p>
+      <div class="rt">
+        <div class="rt-pick"><button class="rt-btn" data-r="money" style="--rc:#ff3b45"><i>💸</i><span><b>Money was taken from my account / UPI</b><small class="hi">मेरे खाते / UPI से पैसे कटे</small></span></button><button class="rt-btn" data-r="arrest" style="--rc:#a77bff"><i>🎭</i><span><b>Someone posed as police / CBI / customs ("digital arrest")</b><small class="hi">पुलिस/CBI बनकर धमकी (डिजिटल अरेस्ट)</small></span></button><button class="rt-btn" data-r="social" style="--rc:#3dd6f5"><i>📱</i><span><b>My social media / email account was hacked</b><small class="hi">सोशल मीडिया / ईमेल हैक हुआ</small></span></button><button class="rt-btn" data-r="women" style="--rc:#ff5a7a"><i>🛡️</i><span><b>Harassment, sextortion, morphed photos, child safety</b><small class="hi">उत्पीड़न, सेक्सटॉर्शन, मॉर्फ्ड फोटो, बाल सुरक्षा</small></span></button><button class="rt-btn" data-r="call" style="--rc:#2ecc71"><i>📞</i><span><b>I received a fraud call / SMS / WhatsApp (no loss)</b><small class="hi">फ़र्ज़ी कॉल / SMS / WhatsApp (कोई नुकसान नहीं)</small></span></button><button class="rt-btn" data-r="phone" style="--rc:#ffd400"><i>📵</i><span><b>My mobile phone was lost or stolen</b><small class="hi">मोबाइल खो गया / चोरी हुआ</small></span></button></div>
+        <div class="rt-out"><div class="rt-panel" id="rt-money" style="--rc:#ff3b45"><h3>💸 Money was taken from my account / UPI</h3><ol class="rt-steps"><li><b>Call 1930 immediately</b><span>Within the golden hour if possible. Give your bank, transaction ID / UTR, amount and the fraudster's number or UPI ID. Note the acknowledgement number.</span></li><li><b>File on cybercrime.gov.in</b><span>Choose “Report Cyber Crime” → financial fraud. Enter every transaction, upload screenshots and statements.</span></li><li><b>Inform your bank</b><span>Call the bank's official helpline or visit the branch; ask them to block the card / UPI and raise a dispute.</span></li><li><b>Follow up with police</b><span>Keep the acknowledgement number. The cyber police may contact you; visit the cyber crime police station if asked.</span></li></ol></div><div class="rt-panel" id="rt-arrest" style="--rc:#a77bff"><h3>🎭 Someone posed as police / CBI / customs ("digital arrest")</h3><ol class="rt-steps"><li><b>Disconnect at once</b><span>No agency questions or arrests anyone on a video call. Do not transfer any money.</span></li><li><b>If money was paid, call 1930</b><span>Treat it as financial fraud — report immediately.</span></li><li><b>Report the number</b><span>Report the call or WhatsApp number on Sanchar Saathi “Chakshu” and on cybercrime.gov.in.</span></li><li><b>Tell family</b><span>Scammers ask you to keep it secret — breaking the secrecy breaks the scam.</span></li></ol></div><div class="rt-panel" id="rt-social" style="--rc:#3dd6f5"><h3>📱 My social media / email account was hacked</h3><ol class="rt-steps"><li><b>Recover the account</b><span>Use the platform's official “Forgot password / Recover account” option.</span></li><li><b>Secure it</b><span>Change the password, log out of all devices, turn on 2-step verification, check the recovery email & phone.</span></li><li><b>Warn your contacts</b><span>Tell friends not to send money to messages from your account.</span></li><li><b>Report</b><span>File on cybercrime.gov.in (other cyber crime) and report to the platform.</span></li></ol></div><div class="rt-panel" id="rt-women" style="--rc:#ff5a7a"><h3>🛡️ Harassment, sextortion, morphed photos, child safety</h3><ol class="rt-steps"><li><b>Do not pay, do not engage</b><span>Paying never stops blackmail. Block the person after saving evidence.</span></li><li><b>Save evidence</b><span>Screenshots, profile links, numbers, chat history — do not delete anything.</span></li><li><b>Report on cybercrime.gov.in</b><span>Use the women / child related crime section. Some such complaints can be reported anonymously on the portal.</span></li><li><b>Get help</b><span>In immediate danger call 112. Women helpline 181 · Child helpline 1098.</span></li></ol></div><div class="rt-panel" id="rt-call" style="--rc:#2ecc71"><h3>📞 I received a fraud call / SMS / WhatsApp (no loss)</h3><ol class="rt-steps"><li><b>Do not respond</b><span>Do not click links, share OTP or install any app.</span></li><li><b>Report on Sanchar Saathi</b><span>Use “Chakshu” on sancharsaathi.gov.in to report suspected fraud calls, SMS and WhatsApp messages.</span></li><li><b>Block & report in the app</b><span>Use WhatsApp / phone “Report & Block”.</span></li><li><b>Warn others</b><span>Share the pattern with family — awareness stops the next victim.</span></li></ol></div><div class="rt-panel" id="rt-phone" style="--rc:#ffd400"><h3>📵 My mobile phone was lost or stolen</h3><ol class="rt-steps"><li><b>Block the SIM</b><span>Call your telecom operator and get a duplicate SIM.</span></li><li><b>Block the handset</b><span>Use “Block your lost / stolen mobile” (CEIR) on sancharsaathi.gov.in.</span></li><li><b>Lodge a police report</b><span>Report the loss / theft to the police; keep the copy.</span></li><li><b>Secure accounts</b><span>Change UPI PIN, bank, email and social media passwords from another device.</span></li></ol></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="eyebrow" data-hi="चरण 2">Step 2</div>
+      <h2 data-hi="cybercrime.gov.in पर शिकायत — चरण दर चरण">Filing on cybercrime.gov.in — step by step</h2>
+      <p class="sec-lead">Click through each step. Keep your evidence ready before you start.</p>
+      <div class="wz">
+        <div class="wz-rail" id="wzRail"></div>
+        <div class="wz-card" id="wzCard"></div>
+        <div class="wz-nav"><button class="btn btn-ghost sm" id="wzPrev">← Back</button><span id="wzN"></span><button class="btn btn-gold sm" id="wzNext">Next →</button></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow" data-hi="चरण 3">Step 3</div>
+      <h2 data-hi="ये जानकारी तैयार रखें">Keep these details ready</h2>
+      <div class="ht-grid">
+        <div class="ht-box" style="--hc:#3dd6f5"><h4>👤 About you</h4><ul><li>Name, mobile number, email</li><li>Address with district & police station</li><li>ID proof (Aadhaar / PAN etc.)</li></ul></div>
+        <div class="ht-box" style="--hc:#2ecc71"><h4>💳 Money details</h4><ul><li>Bank / wallet name</li><li>Transaction ID / UTR, date & time</li><li>Amount of each transaction</li><li>Bank statement of that period</li></ul></div>
+        <div class="ht-box" style="--hc:#ff5a7a"><h4>🕵️ About the fraudster</h4><ul><li>Phone numbers, UPI IDs, account numbers</li><li>Website links, app names</li><li>Social media profile links, email IDs</li></ul></div>
+        <div class="ht-box" style="--hc:#ffd400"><h4>🧾 Evidence</h4><ul><li>Screenshots of chats, calls, payments</li><li>SMS / debit alerts</li><li>Any file under 5 MB per upload is easiest</li></ul></div>
+      </div>
+      <div style="margin-top:22px;display:flex;gap:12px;flex-wrap:wrap"><a class="btn btn-gold" data-go="tools">📝 Use Complaint Helper <span class="arr">→</span></a><a class="btn btn-ghost" data-go="tools">✅ Evidence Checklist <span class="arr">→</span></a></div>
+    </div>
+  </section>
+
+  <section class="alt">
+    <div class="wrap">
+      <div class="eyebrow" data-hi="अन्य रास्ते">Other official channels</div>
+      <h2 data-hi="और कहाँ शिकायत करें">Where else to report</h2>
+      <div class="ch-grid">
+        <a class="ch" style="--hc:#ff3b45" href="tel:1930"><i>📞</i><b>1930</b><span>National Cyber Crime Helpline — financial fraud, 24×7</span></a>
+        <a class="ch" style="--hc:#3dd6f5" href="https://cybercrime.gov.in" target="_blank" rel="noopener"><i>🌐</i><b>cybercrime.gov.in</b><span>National Cyber Crime Reporting Portal — all cyber crimes; track status with your acknowledgement number</span></a>
+        <a class="ch" style="--hc:#2ecc71" href="https://sancharsaathi.gov.in" target="_blank" rel="noopener"><i>📶</i><b>Sanchar Saathi</b><span>Chakshu (report fraud calls/SMS), block lost or stolen phone, check connections in your name</span></a>
+        <a class="ch" style="--hc:#4f8cff" href="https://cms.rbi.org.in" target="_blank" rel="noopener"><i>🏦</i><b>RBI CMS</b><span>Complaint against a bank / payment company if the bank does not resolve your issue</span></a>
+        <a class="ch" style="--hc:#ffd400" href="tel:112"><i>🚨</i><b>112</b><span>Emergency — when someone is in immediate danger</span></a>
+        <a class="ch" style="--hc:#ff5a7a" href="tel:181"><i>👩</i><b>181 · 1098</b><span>Women helpline · Child helpline</span></a>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <div class="eyebrow" data-hi="शिकायत के बाद">After you report</div>
+      <h2 data-hi="आगे क्या होता है">What happens next</h2>
+      <div class="flow nxt">
+        <div class="step"><div class="num">🧾</div><b>Acknowledgement</b><span>You get a complaint / acknowledgement number</span></div>
+        <div class="step"><div class="num">🏦</div><b>Bank alert</b><span>Banks in the money chain are alerted to hold funds</span></div>
+        <div class="step"><div class="num">👮</div><b>Police review</b><span>Complaint goes to the concerned police / cyber cell</span></div>
+        <div class="step"><div class="num">📨</div><b>Contact & FIR</b><span>Police may contact you; FIR where the case requires</span></div>
+        <div class="step"><div class="num">✅</div><b>Refund</b><span>Held money is returned through due legal process</span></div>
+      </div>
+      <div class="ht-dont">
+        <h4>🚫 Never do this after a fraud</h4>
+        <div class="chips"><span class="chip">Don't pay any “recovery agent” or “refund fee”</span><span class="chip">Don't call numbers found on search results</span><span class="chip">Don't delete chats or uninstall the app before saving evidence</span><span class="chip">Don't share OTP with anyone claiming to help</span></div>
+      </div>
+    </div>
+  </section>
+</div>
+
 <!-- ================= CONTACT ================= -->
 <div class="page" id="p-contact">
   <div class="page-head"><div class="wrap"><div class="crumb"><a data-go="home">Home</a> / Get in touch</div><h2>Get in touch</h2><p class="sec-lead" style="margin:0">Follow for cyber awareness as <span class="mono" style="color:var(--gold)">@LEA_TOMAR</span>. For complaints, always use 1930 or cybercrime.gov.in — not direct messages.</p></div></div>
@@ -1753,7 +1891,7 @@ html.light #loader{background:#f3f6fb}
         <div class="fbrand"><img src="data:image/jpeg;base64,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" alt=""><div><b>Vijay Tomar</b><span style="color:var(--gold);font-size:12px;letter-spacing:1.5px">CYBER CRIME ANALYST</span></div></div>
         <p>Cyber Crime Police Station, Ghaziabad · Uttar Pradesh Police. Making the digital world safer — one citizen at a time.</p>
       </div>
-      <div><h5>Explore</h5><a data-go="profile">My Profile</a><a data-go="certificates">Certificates</a><a data-go="workshops">Workshops</a><a data-go="award">Award</a><a data-go="press">Press & Media</a><a data-go="tools">Cyber Tools</a></div>
+      <div><h5>Explore</h5><a data-go="profile">My Profile</a><a data-go="certificates">Certificates</a><a data-go="workshops">Workshops</a><a data-go="award">Award</a><a data-go="press">Press & Media</a><a data-go="tools">Cyber Tools</a><a data-go="howto">How to Report</a></div>
       <div><h5>Helplines</h5><a href="tel:1930">📞 1930 · Cyber Fraud</a><a href="tel:112">🚨 112 · Emergency</a><a href="https://cybercrime.gov.in" target="_blank" rel="noopener">🌐 cybercrime.gov.in</a></div>
       <div><h5>Follow</h5><a href="https://x.com/LEA_TOMAR" target="_blank" rel="noopener"><span style="color:#fff">●</span> X · @LEA_TOMAR</a><a href="https://www.youtube.com/@cybercoplea" target="_blank" rel="noopener"><span style="color:#FF0000">●</span> YouTube · @cybercoplea</a><a href="https://www.linkedin.com/in/lea-tomar/" target="_blank" rel="noopener"><span style="color:#0A66C2">●</span> LinkedIn</a><a href="https://www.instagram.com/LEA_TOMAR/" target="_blank" rel="noopener"><span style="color:#E1306C">●</span> Instagram</a><a href="https://www.facebook.com/COPTOMAR" target="_blank" rel="noopener"><span style="color:#1877F2">●</span> Facebook</a><a data-go="contact">All channels →</a></div>
     </div>
@@ -1778,7 +1916,7 @@ const io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return
 function observe(scope){scope.querySelectorAll('.reveal,.stat,.big-count').forEach(el=>io.observe(el))}
 
 /* ---------- router ---------- */
-const pages=['home','profile','certificates','workshops','award','press','tools','contact'];
+const pages=['home','profile','certificates','workshops','award','press','tools','contact','howto'];
 function moveInk(){const a=$('.tab.active'),ink=$('#ink');if(!a||getComputedStyle(ink).display==='none')return;ink.style.left=a.offsetLeft+10+'px';ink.style.width=a.offsetWidth-20+'px'}
 function go(id,push=true){if(!pages.includes(id))id='home';
   $$('.page').forEach(p=>p.classList.toggle('show',p.id==='p-'+id));
@@ -2172,6 +2310,22 @@ try{if(localStorage.getItem('vt-lang')==='hi')setLang('hi')}catch(_){}
 /* ===== DAY / NIGHT THEME ===== */
 (function(){const b=$('#themeTg');if(!b)return;const set=l=>{document.documentElement.classList.toggle('light',l);try{localStorage.setItem('vt-theme',l?'light':'dark')}catch(_){};const m=document.querySelector('meta[name=theme-color]');if(m)m.content=l?'#f3f6fb':'#0a1628'};
   b.addEventListener('click',e=>{e.preventDefault();e.stopPropagation();set(!document.documentElement.classList.contains('light'))})})();
+
+/* ===== HOW TO REPORT ===== */
+(function(){const bs=$$('.rt-btn');if(!bs.length)return;const pick=k=>{bs.forEach(b=>b.classList.toggle('on',b.dataset.r===k));$$('.rt-panel').forEach(p=>p.classList.toggle('on',p.id==='rt-'+k))};
+  bs.forEach(b=>b.addEventListener('click',()=>{pick(b.dataset.r);if(innerWidth<900)$('#rt-'+b.dataset.r).scrollIntoView({behavior:'smooth',block:'start'})}));pick('money');
+  const W=[['🌐','Open the portal','Go to cybercrime.gov.in — the official National Cyber Crime Reporting Portal. Beware of look-alike sites.','Check the address bar shows cybercrime.gov.in exactly.'],
+   ['📂','Choose the category','Select “Report Cyber Crime”. Pick financial fraud if money was lost, or the women/child or other cyber crime section as applicable.','For women/child related crimes the portal also offers an option to report without revealing identity.'],
+   ['🔐','Register / log in','Log in with your mobile number and the OTP sent to it. Choose your state and district.','This OTP is from the portal itself — never share it with anyone else.'],
+   ['📝','Describe the incident','Enter date & time, the platform used, and what happened in simple words.','Short and factual is best — who, what, when, how much.'],
+   ['💳','Add transactions & suspect details','For each transaction: bank, transaction ID / UTR, amount, date. Add the fraudster’s number, UPI ID, account, link or profile.','One wrong digit can send the alert to the wrong place — double-check.'],
+   ['📎','Upload evidence','Attach screenshots, bank SMS, statements and chat exports.','Keep originals safe on your phone too.'],
+   ['✅','Submit & save the number','Preview, submit, and note the acknowledgement / complaint number. You can track the status on the portal.','Keep this number for all follow-ups with police and bank.']];
+  let i=0;function show(){const w=W[i];$('#wzCard').innerHTML=`<div class="wi">${w[0]}</div><div><h3>${i+1}. ${w[1]}</h3><p>${w[2]}</p><div class="tipx">💡 ${w[3]}</div></div>`;
+    $('#wzRail').innerHTML=W.map((x,k)=>`<button class="${k===i?'on':k<i?'done':''}" data-k="${k}">${k<i?'✓ ':''}${k+1}. ${x[1].split(' ')[0]}</button>`).join('');
+    $('#wzN').textContent=`${i+1} / ${W.length}`;$('#wzPrev').disabled=i===0;$('#wzNext').innerHTML=i===W.length-1?'Open portal ↗':'Next →'}
+  $('#wzRail').addEventListener('click',e=>{const b=e.target.closest('button');if(b){i=+b.dataset.k;show()}});
+  $('#wzPrev').onclick=()=>{if(i>0){i--;show()}};$('#wzNext').onclick=()=>{if(i<W.length-1){i++;show()}else window.open('https://cybercrime.gov.in','_blank','noopener')};show()})();
 
 go(location.hash.slice(1)||'home',false);
 document.fonts&&document.fonts.ready.then(moveInk);
